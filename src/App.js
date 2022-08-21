@@ -7,15 +7,8 @@ const {users} = require('./data.json');
 const App = () => {
     const [timeframe, setTimeFrame] = useState('daily');
 
-    // useEffect(() => {
-
-    // }, [timeframe])
-
-
-    // console.log('timeframe change?', timeframe);
-
     return (
-        <div>
+        <div className='tracker'>
             <Profile 
                 users={users} 
                  

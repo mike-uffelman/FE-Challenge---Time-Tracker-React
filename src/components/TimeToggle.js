@@ -1,36 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 
-const TimeToggle = ({timeframe, setTimeFrame, activeIndex, setActiveIndex}) => {
+const TimeToggle = ({setTimeFrame}) => {
+    const [activeIndex, setActiveIndex] = useState(0);
     const ref = React.createRef();
-    console.log('timeframe', timeframe)
-    
     const times = ['Daily', 'Weekly', 'Monthly']
 
-    // useEffect(() => {
-        
-    // }, [timeframe])
-
-    const toggleTime = (index, ref) => {
-
-        
-        console.log(index, ref.current);
+    const toggleTime = (index) => {
         setTimeFrame(times[index].toLowerCase())
-
-        console.log('ref: ', ref.current[index]);
-        // ref.current.style.color = 'white'
+        setActiveIndex(index);
     }
 
     const renderTimeToggle = times.map((time, index) => {
+        const active = activeIndex === index ? 'isActive' : '';
 
         return (
             <React.Fragment key={index}>
-                <li onClick={() => toggleTime(index, ref)} ref={ref} className="time-toggle__item">{time}</li>
+                <li 
+                    onClick={() => toggleTime(index, ref)} 
+                    className={`time-toggle__item ${active}`}>{time}
+                </li>
             </React.Fragment>
         )
     })
-
-    // console.log('children', children);
 
     return (
         <div className="time-toggle">

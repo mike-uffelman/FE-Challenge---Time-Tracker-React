@@ -2,17 +2,6 @@ import React, { useEffect, useState } from 'react';
 import TimeToggle from './TimeToggle';
 
 const Profile = ({timeframe, setTimeFrame, users}) => {
-    const [activeIndex, setActiveIndex] = useState(null);
-    
-    
-    console.log(users[0].image)
-
-    // useEffect((time) => {
-    //     setTimeFrame(time)
-        
-
-    // }, [timeframe])
-    console.log('profile state: ', timeframe)
 
     return (
         <section className="profile">
@@ -24,8 +13,6 @@ const Profile = ({timeframe, setTimeFrame, users}) => {
                 </div>
             </header>
             <TimeToggle 
-                activeIndex={activeIndex} 
-                setActiveIndex={setActiveIndex}
                 timeframe={timeframe} 
                 setTimeFrame={setTimeFrame}
             />
