@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TimeToggle from './TimeToggle';
 
 const Profile = ({timeframe, setTimeFrame, users}) => {

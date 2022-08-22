@@ -1,17 +1,18 @@
 import '.././src/assets/css/style.css'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Profile from './components/Profile';
 import Card from './components/Card';
-const {users} = require('./data.json');
+const {users} = require('./data.json'); // app data
+
 
 const App = () => {
-    const [timeframe, setTimeFrame] = useState('daily');
+    // define state variable timeframe and setTimeFrame, set default to 'daily'
+    const [timeframe, setTimeFrame] = useState('daily'); 
 
     return (
         <div className='tracker'>
             <Profile 
-                users={users} 
-                 
+                users={users}
                 timeframe={timeframe} 
                 setTimeFrame={setTimeFrame} 
             />
@@ -22,6 +23,3 @@ const App = () => {
 }
 
 export default App;
-
-
-// change to export default() => {}
