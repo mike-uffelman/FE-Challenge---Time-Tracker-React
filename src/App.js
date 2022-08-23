@@ -6,7 +6,6 @@ const {users} = require('./data.json'); // app data
 
 
 const App = () => {
-    // define state variable timeframe and setTimeFrame, set default to 'daily'
     const [timeframe, setTimeFrame] = useState('daily'); 
 
     return (
@@ -19,7 +18,7 @@ const App = () => {
             <Card timeframe={timeframe} data={users[0].data}/>
         </div>
         
-    )
-}
+    );
+};
 
 export default App;

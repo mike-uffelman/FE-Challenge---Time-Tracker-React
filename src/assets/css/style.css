@@ -12,7 +12,7 @@
     --Very-dark-blue: hsl(226, 43%, 10%);
     --Dark-blue: hsl(235, 46%, 20%);
     --Desaturated-blue: hsl(235, 45%, 61%);
-    --Pale-Blue: hsla(236, 100%, 87%, 0.728);
+    --Pale-Blue: hsl(236, 100%, 87%);
 }
 
 * {
@@ -34,6 +34,7 @@ body {
     font-family: 'Rubik', sans-serif;
     color: white;
     background-color: var(--Very-dark-blue);
+    height: 100vh;
 }
 
 #root {
@@ -42,7 +43,8 @@ body {
     align-items: center;
 
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
 }
 
 .tracker {
@@ -52,6 +54,7 @@ body {
     grid-gap: 2rem;
     align-self: flex-start;
 
+    /* height: 100vh; */
     padding: 2rem;
     min-width: 37.5rem;
 }
@@ -155,6 +158,10 @@ body {
 .card__container {
     position: relative;
     z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     padding: 2rem;
 
@@ -267,8 +274,21 @@ svg:hover {
     background-image: linear-gradient(to bottom, var(--selfcare) 50%, transparent 50%);
 }
 
+.attribution {
+    color: white;
+}
+
+.attribution a {
+    color: var(--selfcare);
+    text-decoration: none;
+}
 
 @media screen and (min-width: 1000px) {
+    #root {
+        height: 100%;
+        overflow: hidden;
+    }
+    
     .tracker {
         display: grid;
         grid-template-columns: 1fr 3fr;
@@ -276,6 +296,8 @@ svg:hover {
         grid-gap: 2rem;
         align-self: center;
 
+        padding: 0;
+        min-height: 40rem;
         max-width: 100rem;
     }
 
@@ -300,10 +322,13 @@ svg:hover {
 
     .profile__subheader {
         margin-bottom: .5rem;
+        font-size: 1rem;
     }
 
     .profile__name {
         line-height: 1.25;
+        font-size: 2.6rem;
+        font-weight: 300;
     }
 
     .profile__id {
@@ -376,6 +401,7 @@ svg:hover {
 
     .card__current {
         margin-bottom: 1rem;
+        font-size: 4.2rem;
     }
 
     .card__previous {
